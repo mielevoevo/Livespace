@@ -27,10 +27,12 @@ class VectorType
 int main()
 {
     int x,y,z;
-
+    cin >> x >> y >> z;
     VectorType vector1(x, y, z);
     
     cout << vector1.x_magnitude << "\n";
     cout << vector1.y_magnitude << "\n";
     cout << vector1.z_magnitude << "\n";
+
+    
 }
