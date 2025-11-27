@@ -28,15 +28,25 @@ class VectorType
         cout << "Vector = [" 
              << x_mag << ", "
              << y_mag << ", "
-             << z_mag << "]";
+             << z_mag << "]"
+             << endl;
      }
 };
 
 //DEBUGGING AND TESTING
 int main()
 {
-    int x,y,z;
-    cin >> x >> y >> z;
-    VectorType v1(x, y, z);
+    int x1,y1,z1;
+    int x2,y2,z2;
+
+    //Input Vector 1 & 2
+    cin >> x1 >> y1 >> z1
+        >> x2 >> y2 >> z2;
+
+    VectorType v1(x1, y1, z1);
+    VectorType v2(x2, y2, z2);
+
+    //Show 2 Vectors
     v1.printVector();
+    v2.printVector();
 }
