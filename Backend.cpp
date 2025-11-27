@@ -11,7 +11,15 @@ class VectorType
     //Parameters
         int Vector_Size;
     
+    //Pointer
+        double* Vector;
+        
     public:
+
+    ///////////////
+    //CONSTRUCTOR//
+    ///////////////
+
     //Default Contructor
     VectorType():
         Vector_Size(0){}
@@ -21,17 +29,31 @@ class VectorType
         Vector_Size(size)
         {
             cout << "Input the Vector's Elements!" << endl;
-            double Vector[Vector_Size];
+            Vector = new double[Vector_Size];
             for (int i = 0; i<Vector_Size; i++)
             {
                 cin >> Vector[i]; 
             }
         }
+
+    /////////////
+    //FUNCTIONS//
+    /////////////
     
+    //Euclidean Norm Function
+    double normFunction()
+    {
+        double normSum = 0;
+        for (int i = 0; i<Vector_Size; i++)
+        {
+            normSum += Vector[i] * Vector[i];
+        }
+        return sqrt(normSum);
+    }
+
     //printVector Function
      void printVector()
      {
-        double Vector[Vector_Size];
         cout << "[";
         for (int i = 0; i<Vector_Size; i++)
         {
@@ -44,7 +66,13 @@ class VectorType
                     cout << Vector[i];
                 }
         }
-        cout << "]";
+        cout << "]" << endl;
+     }
+
+     //Destructor
+     ~VectorType()
+     {
+        delete[] Vector;
      }
      
 };
@@ -59,7 +87,7 @@ int main()
 
     VectorType v1(n1);
     v1.printVector();
-
+    cout << v1.normFunction();
 
     //Show 2 Vectors
     //v1.printVector();
