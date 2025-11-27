@@ -1,5 +1,5 @@
 #include <iostream>
-#include <math.h>
+#include <cmath>
 #include <bits//stdc++.h>
 
 using namespace std;
@@ -7,32 +7,61 @@ using namespace std;
 //Vector Class
 class VectorType
 {
-    public:
+    private:
     //Parameters
-        int x_magnitude;
-        int y_magnitude;
-        int z_magnitude;
+        int Vector_Size;
     
-    //Contructor, Standard Vector
-    VectorType();
-    VectorType(int x_magnitude, int y_magnitude, int z_magnitude)
-    {
-        this->x_magnitude = x_magnitude;
-        this->y_magnitude = y_magnitude;
-        this->z_magnitude = z_magnitude;    
-    }
+    public:
+    //Default Contructor
+    VectorType():
+        Vector_Size(0){}
+
+    //Parameterized Constructor
+    VectorType(int size): 
+        Vector_Size(size)
+        {
+            cout << "Input the Vector's Elements!" << endl;
+            double Vector[Vector_Size];
+            for (int i = 0; i<Vector_Size; i++)
+            {
+                cin >> Vector[i]; 
+            }
+        }
+    
+    //printVector Function
+     void printVector()
+     {
+        double Vector[Vector_Size];
+        cout << "[";
+        for (int i = 0; i<Vector_Size; i++)
+        {
+            if (i<Vector_Size-1)
+                {
+                    cout << Vector[i] << ", ";
+                }
+            else
+                {
+                    cout << Vector[i];
+                }
+        }
+        cout << "]";
+     }
+     
 };
 
 //DEBUGGING AND TESTING
 int main()
 {
-    int x,y,z;
-    cin >> x >> y >> z;
-    VectorType vector1(x, y, z);
-    
-    cout << vector1.x_magnitude << "\n";
-    cout << vector1.y_magnitude << "\n";
-    cout << vector1.z_magnitude << "\n";
+    int n1,n2;
 
-    
+    //Input Vector 1 & 2
+    cin >> n1;
+
+    VectorType v1(n1);
+    v1.printVector();
+
+
+    //Show 2 Vectors
+    //v1.printVector();
+    //v2.printVector();
 }
