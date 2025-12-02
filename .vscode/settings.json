@@ -1,5 +1,14 @@
 {
     "files.associations": {
-        "iostream": "cpp"
-    }
+        "iostream": "cpp",
+        "array": "cpp",
+        "string": "cpp",
+        "complex": "cpp",
+        "bitset": "cpp",
+        "initializer_list": "cpp",
+        "regex": "cpp",
+        "utility": "cpp",
+        "iosfwd": "cpp"
+    },
+    "C_Cpp.default.compilerPath": "C:/MinGW/bin/gcc.exe"
 }
